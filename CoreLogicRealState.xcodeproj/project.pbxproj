@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		7F3828342519DC7B00E473FC /* CoreLogic in Frameworks */ = {isa = PBXBuildFile; productRef = 7F3828332519DC7B00E473FC /* CoreLogic */; };
+		7F6EA05225207F2000BA1EC4 /* CoreLogicApiList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6EA05125207F2000BA1EC4 /* CoreLogicApiList.swift */; };
+		7F6EA0552520B5EE00BA1EC4 /* NotificationBannerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7F6EA0542520B5EE00BA1EC4 /* NotificationBannerSwift */; };
+		7F6EA0572520B62000BA1EC4 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6EA0562520B61F00BA1EC4 /* Banner.swift */; };
+		7F70008A251B2A790002FED5 /* AuthorizeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F700089251B2A790002FED5 /* AuthorizeVC.swift */; };
 		7FFF0D2F2508F7F100C5A93C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF0D2E2508F7F100C5A93C /* AppDelegate.swift */; };
 		7FFF0D332508F7F100C5A93C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF0D322508F7F100C5A93C /* ViewController.swift */; };
 		7FFF0D362508F7F100C5A93C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FFF0D342508F7F100C5A93C /* Main.storyboard */; };
@@ -18,6 +22,9 @@
 /* Begin PBXFileReference section */
 		077EA428A07686F998EC9D9A /* Pods_CoreLogicRealState.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoreLogicRealState.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F3828352519DF4B00E473FC /* CoreLogic */ = {isa = PBXFileReference; lastKnownFileType = folder; name = CoreLogic; path = ../../../CoreLogic; sourceTree = "<group>"; };
+		7F6EA05125207F2000BA1EC4 /* CoreLogicApiList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLogicApiList.swift; sourceTree = "<group>"; };
+		7F6EA0562520B61F00BA1EC4 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		7F700089251B2A790002FED5 /* AuthorizeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeVC.swift; sourceTree = "<group>"; };
 		7FFF0D2B2508F7F100C5A93C /* CoreLogicRealState.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreLogicRealState.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FFF0D2E2508F7F100C5A93C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FFF0D322508F7F100C5A93C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,6 +40,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F3828342519DC7B00E473FC /* CoreLogic in Frameworks */,
+				7F6EA0552520B5EE00BA1EC4 /* NotificationBannerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,6 +53,16 @@
 				077EA428A07686F998EC9D9A /* Pods_CoreLogicRealState.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7F70008B251B2A820002FED5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7FFF0D322508F7F100C5A93C /* ViewController.swift */,
+				7F700089251B2A790002FED5 /* AuthorizeVC.swift */,
+				7F6EA05125207F2000BA1EC4 /* CoreLogicApiList.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		7FFF0D222508F7F100C5A93C = {
@@ -69,11 +87,12 @@
 			isa = PBXGroup;
 			children = (
 				7FFF0D2E2508F7F100C5A93C /* AppDelegate.swift */,
-				7FFF0D322508F7F100C5A93C /* ViewController.swift */,
 				7FFF0D342508F7F100C5A93C /* Main.storyboard */,
 				7FFF0D372508F7F500C5A93C /* Assets.xcassets */,
 				7FFF0D392508F7F500C5A93C /* LaunchScreen.storyboard */,
 				7FFF0D3C2508F7F500C5A93C /* Info.plist */,
+				7F70008B251B2A820002FED5 /* ViewControllers */,
+				7F6EA0562520B61F00BA1EC4 /* Banner.swift */,
 			);
 			path = CoreLogicRealState;
 			sourceTree = "<group>";
@@ -96,6 +115,7 @@
 			name = CoreLogicRealState;
 			packageProductDependencies = (
 				7F3828332519DC7B00E473FC /* CoreLogic */,
+				7F6EA0542520B5EE00BA1EC4 /* NotificationBannerSwift */,
 			);
 			productName = CoreLogicRealState;
 			productReference = 7FFF0D2B2508F7F100C5A93C /* CoreLogicRealState.app */;
@@ -127,6 +147,7 @@
 			mainGroup = 7FFF0D222508F7F100C5A93C;
 			packageReferences = (
 				7F3828322519DC7B00E473FC /* XCRemoteSwiftPackageReference "CoreLogic" */,
+				7F6EA0532520B5EE00BA1EC4 /* XCRemoteSwiftPackageReference "NotificationBanner" */,
 			);
 			productRefGroup = 7FFF0D2C2508F7F100C5A93C /* Products */;
 			projectDirPath = "";
@@ -155,7 +176,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F70008A251B2A790002FED5 /* AuthorizeVC.swift in Sources */,
 				7FFF0D332508F7F100C5A93C /* ViewController.swift in Sources */,
+				7F6EA0572520B62000BA1EC4 /* Banner.swift in Sources */,
+				7F6EA05225207F2000BA1EC4 /* CoreLogicApiList.swift in Sources */,
 				7FFF0D2F2508F7F100C5A93C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +392,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		7F6EA0532520B5EE00BA1EC4 /* XCRemoteSwiftPackageReference "NotificationBanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Daltron/NotificationBanner.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -375,6 +407,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7F3828322519DC7B00E473FC /* XCRemoteSwiftPackageReference "CoreLogic" */;
 			productName = CoreLogic;
+		};
+		7F6EA0542520B5EE00BA1EC4 /* NotificationBannerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F6EA0532520B5EE00BA1EC4 /* XCRemoteSwiftPackageReference "NotificationBanner" */;
+			productName = NotificationBannerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

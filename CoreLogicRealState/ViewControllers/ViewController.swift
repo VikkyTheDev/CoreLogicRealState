@@ -12,52 +12,38 @@ import CoreLogic
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-       authenticate()
-       // matchAddress()
+        if let accessToken = UserDefaults.standard.value(forKey: "accessToken") as? String{
+            CoreLogicServices.shared.setAuth(token: CLAuthenticationModel(accessToken: accessToken, tokenType: "", expiresIn: 12, scope: "", iss: "", envAccessRestrict: true, geoCodes: [""], roles: [""], sourceExclusion: [""]))
+            switchToNextScreen()
+        }
     }
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
+    func switchToNextScreen(){
+        let vc = storyboard?.instantiateViewController(withIdentifier: "CoreLogicApiList")
+        navigationController?.pushViewController(vc!, animated: true)
+    }
     func authenticate(){
         CoreLogicServices.shared.authenticate().done({ (data: CLAuthenticationModel) in
+            UserDefaults.standard.set(data.accessToken, forKey: "accessToken")
             CoreLogicServices.shared.setAuth(token: data)
-            self.matchAddress()
+            self.switchToNextScreen()
+            //self.matchAddress()
             print("json \(data)")
         }).catch({ (error) in
             print("Error: \(error)")
         }).finally {
-
+            
         }
     }
-    func matchAddress(){
-       // let params =   ["q": "5 Tandou Ct Kialla VIC 3631, Australia"]
-       // let params =   ["q": "1A/10 Smith St Smithville QLD 4000"]
-        let params =   ["q": "3-5 Rawson St, Auburn NSW 2144, Australia"]
-        // -33.851620
-        // 151.038147
- //"propertyId": 1178371,
-        // 16228573 unit
-        CoreLogicServices.shared.matchAddress(params: params).done({ (data: CLMatchAddressModel) in
-               print("json \(data)")
-           }).catch({ (error) in
-               print("Error: \(error)")
-           }).finally {
-               
-           }
-       }
-//    func getProperyDetail(){
-//          // let params =   ["q": "5 Tandou Ct Kialla VIC 3631, Australia"]
-//          // let params =   ["q": "1A/10 Smith St Smithville QLD 4000"]
-//         let params =   ["q": "Smith St Motorway, Southport QLD, Australia"]
-//
-//
-//        coreLogicService.matchAddress(params: params).done({ (data: CLMatchAddressModel) in
-//                  print("json \(data)")
-//              }).catch({ (error) in
-//                  print("Error: \(error)")
-//              }).finally {
-//
-//              }
-//          }
+
+    
+    @IBAction func authButtonTapped(sender: Any){
+        authenticate()
+    }
+   
 }
 //"propertySummary": {
 //    "address": {
